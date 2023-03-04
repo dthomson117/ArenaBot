@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands
 
+f = open('token.txt', 'r')
+token = f.read()
+
 client = commands.Bot(
     command_prefix='!',
     help_command=None
@@ -13,5 +16,5 @@ async def hello(ctx):
 
 
 client.run(
-    'XXX_DISCORD_BOT_TOKEN_XXX'
+    token
 )
