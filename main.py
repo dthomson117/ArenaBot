@@ -20,8 +20,8 @@ async def hello(ctx):
 
 
 @bot.tree.command(name="challenge", description="Challenge a user to a duel. Has to be on the same level as you or above")
-async def challenge(ctx, user: discord.User):
-    await ctx.send('You have challenged: ' + user.mention)
+async def challenge(ctx, interaction: discord.Interaction):
+    await ctx.send('You have challenged: ' + interaction.user.mention)
 
 
 bot.run(
