@@ -7,17 +7,22 @@ token = f.read()
 intents = discord.Intents.default()
 intents.message_content = True
 
-client = commands.Bot(
+bot = commands.Bot(
     command_prefix='!',
     intents=intents
 )
 
 
-@client.command()
+@bot.command()
 async def hello(ctx):
     await ctx.send('Hello!')
 
 
-client.run(
+@bot.command()
+async def challenge(ctx, user: discord.User):
+    await ctx.send('You have challenged: ' + user.mention)
+
+
+bot.run(
     token
 )
